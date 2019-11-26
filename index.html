@@ -10,8 +10,8 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+      <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
     <link rel="stylesheet" href="css/style.css">
-		
 </head>
 <body>
 
@@ -27,8 +27,8 @@
     <script id="entry-template" type="text/x-handlebars-template">
         <ul class="titolo">{{titolo}}
             <li class="titolo-originale">Titolo originale: {{titolo_originale}}</li>
-            <li class="voto">Voto: {{voto}}</li>
-            <li class="lingua">Lingua: {{lingua}}</li>
+            <li class="voto">Voto: {{{stelle}}}</li>
+            <li class="lingua">Lingua: {{{lingua}}}</li>
         </ul>
 
 

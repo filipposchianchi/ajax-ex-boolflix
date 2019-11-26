@@ -6,4 +6,11 @@
 li {
     font-size: 17px;
     font-weight: normal;
+    margin-bottom: 10px;
+    }
+
+img {
+    width: 25px;
+    height: 25px;
+    vertical-align: -7px;
 }
