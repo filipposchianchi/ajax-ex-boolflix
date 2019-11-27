@@ -18,6 +18,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 999;
 }
 
 .logo{
@@ -108,14 +110,13 @@ p {
 }
 
 main {
-    position: s;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 }
 
 .container-film, .container-serie{
-    margin-top: 12px ;
+    margin-top: 65px ;
     width: 90%;
     display: flex;
     flex-direction: column;    

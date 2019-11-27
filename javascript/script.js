@@ -58,7 +58,6 @@ $( document ).ready(function() {
                     $(".serie").show();
                     $("#left-button-serie").show();
                     $("#right-button-serie").show();
-
                 }
 
                 console.log(data.results);
