@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background: gray;;
+}
+
 header {
     width: 100%;
     height: 100px;
@@ -43,8 +47,10 @@ header {
     border: 1px white solid;
 }
 .card {
+    width: 342px;
     position: relative;
     padding-bottom: 50px;
+
 }
 .card > img{
     width: 342px;
@@ -94,19 +100,28 @@ p {
 }
 
 main {
-    width: 100%;
-    height: calc(100vh - 100px);
     display: flex;
-    justify-content: center;
-    background-color: gray;
+    flex-direction: column;
     overflow-y: auto;
 }
 
-.container{
+.container-film, .container-serie{
     margin-top: 20px ;
     width: 90%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;    
+    align-self: center;
+}
+
+.wrapper-film, .wrapper-serie {
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.film, .serie{
+    font-size: 25px;
+    display: none;
+    margin-bottom: 8px;
 }
 

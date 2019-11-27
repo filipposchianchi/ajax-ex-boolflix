@@ -19,6 +19,10 @@ $( document ).ready(function() {
                 
                 var arrayFilm = data.results;
 
+                if(arrayFilm.length>0){
+                    $(".film").show()
+                }
+
                 for(var i = 0; i<arrayFilm.length; i++) {
 
                     var voto = Math.ceil(arrayFilm[i].vote_average / 2)
@@ -32,7 +36,7 @@ $( document ).ready(function() {
                         trama: trama(arrayFilm[i].overview)
                     }
                     var html = sorgenteDigerita(context);
-                    $(".container").append(html);
+                    $(".wrapper-film").append(html);
                 }
             },
                 error : function (errore) {
@@ -47,6 +51,10 @@ $( document ).ready(function() {
             success : function (data) {
 
                 var arrayTv = data.results;
+
+                if(arrayTv.length>0){
+                    $(".serie").show()
+                }
 
                 console.log(data.results);
 
@@ -64,7 +72,7 @@ $( document ).ready(function() {
                     }
 
                     var html = sorgenteDigerita(context);
-                    $(".container").append(html);
+                    $(".wrapper-serie").append(html);
 
                 }
    
