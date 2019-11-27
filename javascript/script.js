@@ -8,13 +8,14 @@ $( document ).ready(function() {
         var sorgente   = $("#entry-template").html();
 	 	var sorgenteDigerita = Handlebars.compile(sorgente);
         
-
+        /*FILM */
         $.ajax({
             url : "https://api.themoviedb.org/3/search/movie?api_key=d80459abdb15e66d6b67344e00155b7c&language=it-IT&query=" + titolo,
             method : "get",
             success : function (data) {
                 $(".titolo").empty();
                 $(".searchbar").val("");
+                console.log(data.results)
                 
                 var arrayFilm = data.results;
 
@@ -23,10 +24,12 @@ $( document ).ready(function() {
                     var voto = Math.ceil(arrayFilm[i].vote_average / 2)
 
                     var context = {
+                        src : poster(arrayFilm[i].poster_path),
                         titolo: arrayFilm[i].title,
                         titolo_originale: arrayFilm[i].original_title,
                         lingua: bandiera(arrayFilm[i].original_language),
-                        stelle: stelle(voto)
+                        stelle: stelle(voto),
+                        trama: trama(arrayFilm[i].overview)
                     }
                     var html = sorgenteDigerita(context);
                     $(".container").append(html);
@@ -37,25 +40,29 @@ $( document ).ready(function() {
             }
         });
 
-
+        /*SERIE TV */
         $.ajax({
             url : "https://api.themoviedb.org/3/search/tv?api_key=d80459abdb15e66d6b67344e00155b7c&language=it-IT&query=" + titolo,
             method : "get",
             success : function (data) {
-                $(".titolo").empty();
 
                 var arrayTv = data.results;
+
+                console.log(data.results);
 
                 for(var i = 0; i<arrayTv.length; i++) {
 
                     var voto = Math.ceil(arrayTv[i].vote_average / 2)
 
                     var context = {
+                        src : poster(arrayTv[i].poster_path),
                         titolo: arrayTv[i].name,
                         titolo_originale: arrayTv[i].original_name,
                         lingua: bandiera(arrayTv[i].original_language),
-                        stelle: stelle(voto)
+                        stelle: stelle(voto),
+                        trama: trama(arrayTv[i].overview)
                     }
+
                     var html = sorgenteDigerita(context);
                     $(".container").append(html);
 
@@ -72,13 +79,13 @@ $( document ).ready(function() {
     function bandiera(lingua) {
         var stringa
         if(lingua==="it") {
-            stringa = '<img src="assets/img/italy.png"></img>'
+            stringa = '<img class="nazione" src="assets/img/italy.png"></img>'
         } else if (lingua === "de") {
-            stringa = '<img src="assets/img/germany.png"></img>'
+            stringa = '<img class="nazione" src="assets/img/germany.png"></img>'
         } else if (lingua === "en") {
-            stringa = '<img src="assets/img/united_kingdom.png"></img>'
+            stringa = '<img class="nazione" src="assets/img/united_kingdom.png"></img>'
         } else if(lingua ==="es") {
-            stringa = '<img src="assets/img/spain.png"></img>'
+            stringa = '<img class="nazione" src="assets/img/spain.png"></img>'
             return stringa
         } else {
             stringa = lingua;
@@ -101,13 +108,30 @@ $( document ).ready(function() {
         } else {
             stringa = '<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
         }
-        
         return stringa;
     }
-    
 
-    
+    function trama(overview){
+        var stringaTrama;
+        if(overview === "") {
+            stringaTrama = "";
+        } else {
+            stringaTrama = "<b>Trama: </b> " + overview;
+        }
+        return stringaTrama
+    }
 
+
+    function poster(stringaFinale){
+        var stringaPoster;
+        if(stringaFinale === null) {
+            stringaPoster = "assets/img/white.jpg";
+        }
+        else {
+            stringaPoster = "https://image.tmdb.org/t/p/w342" + stringaFinale;
+        }
+        return stringaPoster
+    }
 }) 
 
 

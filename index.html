@@ -10,28 +10,46 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-      <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 
 
-    <input type="text" class="searchbar">
-    <input type="submit" value="Submit" class="invio">
+    <header>
+        <a  class="logo" href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/191126/c2afbefb193becb208cc4f7dcf0a14da.png" alt="netflix-font" border="0"></a>
 
-    <div class="container"></div>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Inserisci titolo">
+            <input type="submit" value="Submit" class="invio">
+        </div>
+    </header>
+
+
+    <main>
+
+        <div class="container"></div>
+
+    </main>
+
+    
+
+    
 
 
     <!--TEMPLATE HANDLEBARS  -->
     <script id="entry-template" type="text/x-handlebars-template">
-        <ul class="titolo">{{titolo}}
-            <li class="titolo-originale">Titolo originale: {{titolo_originale}}</li>
-            <li class="voto">Voto: {{{stelle}}}</li>
-            <li class="lingua">Lingua: {{{lingua}}}</li>
-        </ul>
-
-
+        <div class="card">
+            <img class="poster" src="{{src}}" alt="">
+            <div class="wrapper">
+                <p ><span class="titolo">Titolo: </span> {{titolo}}</p>
+                <p><span class="titolo-originale">Titolo originale: </span> {{titolo_originale}}</p>
+                <p><span class="voto">Voto: </span> <span class="stelle"> {{{stelle}}}</span> </p>
+                <p><span class="lingua">Lingua originale: </span> {{{lingua}}}</p>
+                <p><span class="trama"> </span> {{{trama}}}</p>
+            </div>
+        </div>
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
