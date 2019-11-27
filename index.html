@@ -10,13 +10,12 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
 </head>
 <body>
-
-
 
     <header>
         <a  class="logo" href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/191126/c2afbefb193becb208cc4f7dcf0a14da.png" alt="netflix-font" border="0"></a>
@@ -33,14 +32,14 @@
         <div id="left-button-film"><i class="fas fa-arrow-left"></i></div>
         <div class="container-film">
             <h2 class="film">FILM</h2>
-            <div class="wrapper-film"></div>
+            <div class="wrapper-film scroller"></div>
         </div>
         <div id="right-button-film"><i class="fas fa-arrow-right"></i></div>
         
         <div id="left-button-serie"><i class="fas fa-arrow-left"></i></div>
         <div class="container-serie">
             <h2 class="serie">SERIE TV</h2>
-            <div class="wrapper-serie"></div>
+            <div class="wrapper-serie scroller"></div>
         </div>
         <div id="right-button-serie"><i class="fas fa-arrow-right"></i></div>
 
@@ -55,7 +54,7 @@
     <script id="entry-template" type="text/x-handlebars-template">
         <div class="card">
             <img class="poster" src="{{src}}" alt="">
-            <div class="wrapper">
+            <div class="wrapper scroller">
                 <p ><span class="titolo">Titolo: </span> {{titolo}}</p>
                 <p><span class="titolo-originale">Titolo originale: </span> {{titolo_originale}}</p>
                 <p><span class="voto">Voto: </span> <span class="stelle"> {{{stelle}}}</span> </p>

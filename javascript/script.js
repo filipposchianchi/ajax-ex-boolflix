@@ -90,25 +90,25 @@ $( document ).ready(function() {
 
     $('#right-button-film').click(function() {
         $('.wrapper-film').animate({
-          scrollLeft: "+=200px"
+          scrollLeft: "+=700px"
         }, "slow");
     });
       
     $('#left-button-film').click(function() {
         $('.wrapper-film').animate({
-          scrollLeft: "-=200px"
+          scrollLeft: "-=700px"
         }, "slow");
     });
 
     $('#right-button-serie').click(function() {
         $('.wrapper-serie').animate({
-          scrollLeft: "+=200px"
+          scrollLeft: "+=700px"
         }, "slow");
     });
       
     $('#left-button-serie').click(function() {
         $('.wrapper-serie').animate({
-          scrollLeft: "-=200px"
+          scrollLeft: "-=700px"
         }, "slow");
     });
 
