@@ -6,12 +6,14 @@
 }
 
 body{
-    background: gray;;
+    background: gray;
+    font-family: 'Lato', sans-serif;
+
 }
 
 header {
     width: 100%;
-    height: 100px;
+    height: 60px;
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -20,6 +22,9 @@ header {
 
 .logo{
     margin-left: 20px;
+}
+.logo img {
+    height: 40px;
 }
 
 .search{
@@ -33,9 +38,12 @@ header {
     padding-left:5px ;
 }
 .invio{
-    width: 50px;
-    height: 30px;
+    width: 55px;
+    height: 35px;
     border-radius: 2px;
+    background-color: #dc1a28;
+    color: white;
+    font-weight: bold;
 }
 
 .poster {
@@ -49,8 +57,7 @@ header {
 .card {
     width: 342px;
     position: relative;
-    padding-bottom: 50px;
-
+    margin-right: 20px;
 }
 .card > img{
     width: 342px;
@@ -67,6 +74,7 @@ header {
     top: 20px;
     left: 20px;
     display: none;
+    padding: 2px;
 }
 
 .card:hover .wrapper{
@@ -74,7 +82,7 @@ header {
 }
 
 .card:hover .poster{
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .titolo, .titolo-originale, .voto, .lingua, .trama{
@@ -85,7 +93,7 @@ header {
 }
 
 p {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: normal;
     margin-bottom: 10px;
     display: block;
@@ -100,13 +108,14 @@ p {
 }
 
 main {
+    position: s;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 }
 
 .container-film, .container-serie{
-    margin-top: 20px ;
+    margin-top: 12px ;
     width: 90%;
     display: flex;
     flex-direction: column;    
@@ -115,13 +124,47 @@ main {
 
 .wrapper-film, .wrapper-serie {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    margin-bottom: 20px;
 }
 
 .film, .serie{
     font-size: 25px;
     display: none;
     margin-bottom: 8px;
+    
+}
+
+#left-button-film {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    font-size: 30px;
+    display: none;
+}
+#right-button-film {
+    position: absolute;
+    top: 350px;
+    right: 30px;
+    font-size: 30px;
+    display: none;
+}
+
+#left-button-serie{
+    position: absolute;
+    top: 950px;
+    left: 30px;
+    font-size: 30px;
+    display: none;
+
+}
+
+#right-button-serie{
+    position: absolute;
+    top: 950px;
+    right: 30px;
+    font-size: 30px;
+    display: none;
+
 }
 
