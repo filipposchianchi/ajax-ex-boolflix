@@ -67,10 +67,13 @@ function getData(url, query, type) {
                 $(".film").show();
                 $("#left-button-film").show();
                 $("#right-button-film").show();
+                $(".benvenuto-wrapper").hide()
             } else if(type === "tv" && elements.length > 0){
                 $(".serie").show();
                 $("#left-button-serie").show();
                 $("#right-button-serie").show();
+                $(".benvenuto-wrapper").hide()
+
             }
 
 			print(type, elements);
@@ -102,7 +105,7 @@ function print(type, elems) {
 			lingua: bandiera(elem.original_language),
 			stelle: stelle(voto),
             src: poster(elem.poster_path),
-            trama: trama
+            trama: trama(elem.overview)
         };		
         
         var html = template(context);

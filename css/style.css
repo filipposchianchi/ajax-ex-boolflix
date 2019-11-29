@@ -6,7 +6,8 @@
 }
 
 body{
-    background: gray;
+    display: flex;
+    flex-direction: column;
     font-family: 'Lato', sans-serif;
 
 }
@@ -18,7 +19,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 999;
 }
 
@@ -111,10 +111,28 @@ main {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    background: gray;
+    height: calc(100vh - 60px);
+    position: relative;
+
+}
+
+.benvenuto-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    width: 60%;
+    align-self: center;
+}
+
+.benvenuto-wrapper h1 {
+    color: darkred;
+    font-size: 60px;
+    text-align: center;
 }
 
 .container-film, .container-serie{
-    margin-top: 65px ;
+    margin-top: 8px ;
     width: 90%;
     display: flex;
     flex-direction: column;    
@@ -135,14 +153,14 @@ main {
 
 #left-button-film {
     position: absolute;
-    top: 350px;
+    top: 290px;
     left: 30px;
     font-size: 30px;
     display: none;
 }
 #right-button-film {
     position: absolute;
-    top: 350px;
+    top: 290px;
     right: 30px;
     font-size: 30px;
     display: none;
@@ -150,7 +168,7 @@ main {
 
 #left-button-serie{
     position: absolute;
-    top: 950px;
+    top: 880px;
     left: 30px;
     font-size: 30px;
     display: none;
@@ -159,7 +177,7 @@ main {
 
 #right-button-serie{
     position: absolute;
-    top: 950px;
+    top: 880px;
     right: 30px;
     font-size: 30px;
     display: none;
@@ -168,6 +186,6 @@ main {
 /*SCROLLBAR PER FIREFOX*/
 .scroller {
     overflow:auto;
-    scrollbar-color: rgb(5, 5, 5) rgb(43, 43, 43);
+    scrollbar-color: rgb(0, 0, 0) rgb(54, 54, 54);
     scrollbar-width: thin;
   }
